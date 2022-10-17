@@ -1,5 +1,7 @@
 # web-231
-# H1 WEB 231 Enterprise JavaScript I
-# H2 Contributors
-*Professor Krasso
-*Chris Gorham
+<h1> WEB 231 Enterprise JavaScript I
+<h2> Contributors
+<ul>
+<li>*Professor Krasso
+<li>*Chris Gorham
+</uL>
