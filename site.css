@@ -1,4 +1,6 @@
-
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
 
 .container {
     margin-top: 50px;
