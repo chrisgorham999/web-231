@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>
+            WEB 231 - Enterprise JavaScript I
+        </title>
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>Exercise 2.2 - Hello JavaScript</h1>
+            <button id="btnMyCourse">What course am I taking?</button>
+            <p id="txtMyWorld">
+            <script>
+            const element = document.getElementById("btnMyCourse");
+            element.addEventListener("click", myFunction);
+
+              function myFunction() {
+                document.getElementByID("txtMyWorld").innerHTML = "You are now in Gorham's world!";
+              }
+            </script>
+            
+
+        </div>
+
+    </body>
+</html>
