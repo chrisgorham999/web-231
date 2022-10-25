@@ -30,15 +30,18 @@
         <p id="txtMyWorld">
         
         <script>
+        // element object defined
         const element = document.getElementById("btnMyCourse");
+        // event listener added for a click action which triggers the function
         element.addEventListener("click", myFunction);
         
-        // displays text into txtMyWorld paragraph and displays an alert box when clicked
+        // prints the innerHTML text into the txtMyWorld paragraph and displays an alert box with text when clicked
         function myFunction() {
           document.getElementById("txtMyWorld").innerHTML = "You are now in Gorham's world!";
           alert("WEB 231 - Enterprise JavaScript I");
         }
         </script>
+
         </p>
         <a href="../index.html" class="return-home">Return</a>
     </body>
