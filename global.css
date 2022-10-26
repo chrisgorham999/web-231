@@ -70,6 +70,7 @@
 .return-home:hover {
     background-color: #D6A800;
     color: #4F3674;
+    text-decoration: underline;
 }
 
 .return-home:visited {
