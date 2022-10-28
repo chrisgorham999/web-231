@@ -1,3 +1,14 @@
+/*
+======================================
+; Title: global.css 
+; Author: Professor Krasso
+; Date: 25 Oct 2022
+; Modified By: Chris Gorham
+; Description: This code styles multiple things throughout the WEB 231 course
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;

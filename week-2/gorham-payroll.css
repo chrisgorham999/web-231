@@ -1,3 +1,14 @@
+/*
+======================================
+; Title: gorham-payroll.css 
+; Author: Professor Krasso
+; Date: 25 Oct 2022
+; Modified By: Chris Gorham
+; Description: This code provides additional styling for assignment 2.3 (payroll)
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
 .record-styling {
     border: dotted;
     border-width: 1px;
