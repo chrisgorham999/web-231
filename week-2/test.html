@@ -1,0 +1,78 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="container">
+        
+        <h1 id="payroll-header">Payroll System</h1>
+        
+        <h3>Employee record 1</h3>
+        
+        <ul>
+            <li id="txtFirstNameMiyamoto"></li>
+            <li id="txtLastNameMiyamoto"></li>
+            <li id="txtAddressMiyamoto"></li>
+            <li id="txtHireDateMiyamoto"></li>
+            <li id="txtPayRateMiyamoto"></li>
+        </ul>
+        
+        <h3>Employee record 2</h3>
+        <ul>
+            <li id="txtFirstNameTomoe"></li>
+            <li id="txtLastNameTomoe"></li>
+            <li id="txtAddressTomoe"></li>
+            <li id="txtHireDateTomoe"></li>
+            <li id="txtPayRateTomoe"></li>
+        </ul>
+        <h3>Employee record 3</h3>
+        <ul>
+            <li id="txtFirstNameZato"></li>
+            <li id="txtLastNameZato"></li>
+            <li id="txtAddressZato"></li>
+            <li id="txtHireDateZato"></li>
+            <li id="txtPayRateZato"></li>
+        </ul>
+        <a href="../index.html" class="return-home">Return</a>
+        </div>
+        <script>
+        
+            const txtFirstNameEmployeeA = "Miyamoto";
+            const txtLastNameEmployeeA = "Usagi";
+            const txtAddressEmployeeA = "231 Sakai Circle";
+            const txtHireDateEmployeeA = new Date().toLocaleDateString(“en-US”);
+            const txtPayRateEmployeeA = 38.50.toFixed(1);
+        
+            const txtFirstNameEmployeeB = "Tomoe";
+            const txtLastNameEmployeeB = "Amoe";
+            const txtAddressEmployeeB = "12 Prefecture Rd";
+            const txtHireDateEmployeeB = new Date().toLocaleDateString(“en-US”);
+            const txtPayRateEmployeeB = 28.88.toFixed(1);
+        
+            const txtFirstNameEmployeeC = "Zato";
+            const txtLastNameEmployeeC = "Ino";
+            const txtAddressEmployeeC = "200 Ronin Rd";
+            const txtHireDateEmployeeC = new Date().toLocaleDateString(“en-US”);
+            const txtPayRateEmployeeC = 12.50.toFixed(1);
+        
+            document.getElementById("txtFirstNameMiyamoto").innerHTML = txtFirstNameEmployeeA;
+            document.getElementById(“txtLastNameMiyamoto").innerHTML = txtLastNameEmployeeA;
+            document.getElementById(“txtAddressMiyamoto”).innerHTML = txtAddressEmployeeA;
+            document.getElementById(“txtHireDateMiyamoto”).innerHTML = txtHireDateEmployeeA;
+            document.getElementById(“txtPayRateMiyamoto”).innerHTML = txtPayRateEmployeeA;
+        
+            document.getElementById(“txtFirstNameTomoe”).innerHTML = txtFirstNameEmployeeB;
+            document.getElementById(“txtLastNameTomoe”).innerHTML = txtLastNameEmployeeB;
+            document.getElementById(“txtAddressTomoe”).innerHTML = txtAddressEmployeeB;
+            document.getElementById(“txtHireDateTomoe”).innerHTML = txtHireDateEmployeeB;
+            document.getElementById(“txtPayRateTomoe”).innerHTML = txtPayRateEmployeeB;
+        
+            document.getElementById(“txtFirstNameZato”).innerHTML = txtFirstNameEmployeeC;
+            document.getElementById(“txtLastNameZato”).innerHTML = txtLastNameEmployeeC;
+            document.getElementById(“txtAddressZato”).innerHTML = txtAddressEmployeeC;
+            document.getElementById(“txtHireDateZato”).innerHTML = txtHireDateEmployeeC;
+            document.getElementById(“txtPayRateZato”).innerHTML = txtPayRateEmployeeC;
+            
+        </script>
+        </body>
+</html>
