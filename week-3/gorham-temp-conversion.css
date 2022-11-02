@@ -1,0 +1,22 @@
+/*
+======================================
+; Title: gorham-temp-conversion.css 
+; Author: Professor Krasso
+; Date: 01 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code styles some additional things for Assignment 3.2 that are needed or that differ from global.css
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+/* the original card-content is not centered so instead of changing the global.css values I added this one just for this assignment */
+.card-content-centered {
+    padding: 2px 16px;
+    text-align: center;
+    font-size: 26px;
+}
+
+/* to match the width of the button shown in the solutions example */
+.most-width {
+    width: 54%;
+}
