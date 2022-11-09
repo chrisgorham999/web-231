@@ -63,7 +63,7 @@
         function guessFunction() {
           // sets myNumber to the value that is typed into the guess the number input box
           let myNumber = document.getElementById("txtMyNumber").value;
-          // three if (or else if) statements outline what will be inputted into the results div, depending on if it is >, <, or = to rnd
+          // three if (or else if) statements outline what will be inputted into the results div, depending on if it is >, <, or = to the random number
           if (myNumber < rnd) document.getElementById("results").innerHTML = "The number is greater than " + myNumber;
           else if (myNumber > rnd) document.getElementById("results").innerHTML = "The number is less than " + myNumber;
           else if (myNumber = rnd) document.getElementById("results").innerHTML = "Congratulations! You picked the correct number!";         
