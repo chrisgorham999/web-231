@@ -1,0 +1,21 @@
+/*
+======================================
+; Title: global.css 
+; Author: Professor Krasso
+; Date: 25 Oct 2022
+; Modified By: Chris Gorham
+; Description: This code styles multiple things throughout the WEB 231 course
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+/* the original card-content is not centered so instead of changing the global.css values I added this one just for this assignment */
+.card-content-centered {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* to match the width of the button shown in the solutions example */
+.most-width {
+    width: 60%;
+}

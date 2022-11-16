@@ -1,0 +1,129 @@
+<!-- 
+======================================
+; Title: Assignment 5.2 - Sequence Game
+; Author: Professor Krasso
+; Date: 15 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code is for the Sequence Game HTML & JavaScript
+; Sources Used: 
+; Web 231 HTML, CSS, and JavaScript Requirements Word Document
+; https://www.w3schools.com/html/html_form_elements.asp (option elements)
+; https://www.w3schools.com/js/js_loop_for.asp (for loop)
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <!-- Google Font Set (Oswald) for WEB 231-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link rel="stylesheet" type="text/css" href="gorham-sequence-game.css">
+    </head>
+
+<body>
+
+    <div id="container">
+        <h1 class="app-header">Welcome to the sequence game!</h1>
+
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">Sequence Selection Form</div><br>
+                <div class="card-content">
+                    <label class="form-field">Choose a number sequence:</label>
+                    <select class="drop-down-menu" id="sequence">
+                        <option value="select">--Select--</option>
+                        <option value="fibonacci">Fibonacci Sequence</option>
+                        <option value="even">Even Numbers</option>
+                        <option value="odd">Odd Numbers</option>
+                    </select>
+                    <br><br>
+                    <button class="btn btn-primary most-width" id="btnDisplaySequence">Display Sequence</button>
+                </div><br>
+            </div>
+
+        </div>
+
+
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">Sequence Results</div>
+                <div class="card-content-centered" id="results"></div>
+            </div>
+        </div>
+        
+
+        <div class="card-example">
+            <a href="../index.html" class="return-home">Return</a>
+        </div>
+                
+
+    </div>
+
+
+        <script>
+            // establish the onclick action for Display Sequence button and tell it which function to run
+            document.getElementById("btnDisplaySequence").onclick = function() {sequenceFunction()};
+
+            
+            function sequenceFunction() {
+              // setup var choice as the value from what is selected by the user in the drop down menu
+              let choice = document.getElementById("sequence").value;
+
+              // the first of 4 if or else if statements that dictate what to do depending on what option the user chooses
+              if (choice === "fibonacci") {
+                // define the variables involved to make a fibonacci sequence work and one for the number string
+                let num1 = 0;
+                let num2 = 1;
+                let next = 0;
+                let fibonacciSequenceText = [];
+                    // while loop that sets up the fibonacci string 
+                    while (num1 < 40) {
+                        fibonacciSequenceText = fibonacciSequenceText + num1 + ", ";
+                        next = num1 + num2;
+                        num1 = num2;
+                        num2 = next;
+                    }
+                    // posts the results from the loop into the results id card
+                    document.getElementById("results").innerHTML = fibonacciSequenceText.slice(0, -2);
+                }
+
+                else if (choice === "even") {
+                    // defining the variables involved
+                    let even = 0;
+                    let evenSequenceText = [];
+                        // do while loop that increases by 2 until it reaches 20
+                        do {
+                            evenSequenceText = evenSequenceText + even + ", ";
+                            even = even + 2;
+                        } while (even < 20);
+                    // posts the results from the do while loop into the results id card    
+                    document.getElementById("results").innerHTML = evenSequenceText.slice(0, -2);
+
+
+                } 
+                
+                else if (choice === "odd") {
+                    // defines the string variable that will hold the numbers
+                    let oddSequenceText = [];
+                        // for loop defines the variable then sets it to run until less than 20 and adds 2 each time it is ran
+                        for (let odd = 1; odd < 20; odd = odd + 2) {
+                            oddSequenceText = oddSequenceText + odd + ", ";
+                        }
+                    // posts the results from the do while loop into the results id card
+                    document.getElementById("results").innerHTML = oddSequenceText.slice(0, -2);
+                }
+                
+                // creates an alert if the user chooses 'select'
+                else if (choice === "select") {
+                    alert("Invalid selection, please try again!");
+                }
+
+            }
+            
+        </script>
+
+    </body>
+    </html>
