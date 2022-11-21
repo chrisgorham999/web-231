@@ -26,7 +26,7 @@
     margin-bottom: 30px;
 }
 
-/* Added bold to fit the headings look like in the example*/
+/* Added bold to match the example in the instructions */
 .table-header {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -40,7 +40,7 @@
     border-style: solid;
 }
 
-/* Added some additional padding to match the example in the instruction */
+/* Added some additional padding to match the example in the instructions */
 .table-data {
     border: 1px;
     border-color: #ddd;
