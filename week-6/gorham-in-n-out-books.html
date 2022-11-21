@@ -1,0 +1,211 @@
+<!-- 
+======================================
+; Title: Assignment 6.2 - In-N-Out-Books
+; Author: Professor Krasso
+; Date: 21 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code is for the In-N-Out-Books HTML & JavaScript
+; Sources Used: 
+; Web 231 HTML, CSS, and JavaScript Requirements Word Document
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <!-- Google Font Set (Oswald) for WEB 231-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link rel="stylesheet" type="text/css" href="gorham-in-n-out-books.css">
+    </head>
+
+<body>
+
+    <div id="container">
+        <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">My Favorites</div><br>
+                <div class="card-content">
+                    <label class="form-field">Choose a listing:</label>
+                    <select class="drop-down-menu" id="favoriteList">
+                        <option value="select">--Select--</option>
+                        <option value="books">Top 3 Favorite Books</option>
+                        <option value="authors">Top 3 Favorite Authors</option>
+                    </select>
+                    <br><br>
+                    <button class="btn btn-primary most-width" id="btnDisplayListing">Display Listing</button>
+                </div><br>
+            </div>
+                <div class="card-example">
+                <a href="../index.html" class="return-home">Return</a>
+                </div>
+
+        </div>
+
+        <!-- The first card (favorite books) that will be generated but hidden upon page load-->
+        <div class="card-example">
+            <div class="card" id="favorite-books">
+                <div class="card-title">Top 3 Favorite Books</div>
+                <div class="card-content">
+                    <table class="table-stuff">
+                        <tr>
+                            <th class="table-header">ISBN</th>
+                            <th class="table-header">Title</th>
+                            <th class="table-header">Pages</th>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="book1isbn"></td>
+                            <td class="table-data" id="book1title"></td>
+                            <td class="table-data" id="book1pages"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="book2isbn"></td>
+                            <td class="table-data" id="book2title"></td>
+                            <td class="table-data" id="book2pages"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="book3isbn"></td>
+                            <td class="table-data" id="book3title"></td>
+                            <td class="table-data" id="book3pages"></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+            <!-- The second card (favorite authors) that will be generated but hidden upon page load-->
+            <div class="card" id="favorite-authors">
+                <div class="card-title">Top 3 Favorite Authors</div>
+                <div class="card-content">
+                    <table class="table-stuff">
+                        <tr>
+                            <td class="table-header">Name</td>
+                            <td class="table-header">Genre</td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="author1name"></td>
+                            <td class="table-data" id="author1genre"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="author2name"></td>
+                            <td class="table-data" id="author2genre"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="author3name"></td>
+                            <td class="table-data" id="author3genre"></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+        
+    </div>
+
+        <script>
+            // Define variables for the HTML IDs of the two cards
+            let books = document.getElementById("favorite-books");
+            let authors = document.getElementById("favorite-authors");
+
+            // Set the cards to be not displayed upon page load (before the click action)
+            books.style.display = "none";
+            authors.style.display = "none";
+
+            // define the three book and three author object literals
+            let book1 = {
+                isbn: "121891919",
+                title: "On The Road",
+                pages: "321"
+            }
+
+            let book2 = {
+                isbn: "9918923232",
+                title: "Choke",
+                pages: "384"
+            }
+
+            let book3 = {
+                isbn: "838617721",
+                title: "Post Office",
+                pages: "178"
+            }
+
+            let author1 = {
+                name: "Charles Bukowski",
+                genre: "Realism"
+            }
+
+            let author2 = {
+                name: "Chuck Palahniuk",
+                genre: "Cynicism"
+            }
+
+            let author3 = {
+                name: "Jack Kerouac",
+                genre: "Beat Generation"
+            }
+
+            // populate each table with the object literal data
+            document.getElementById("book1isbn").innerHTML = book1.isbn;
+            document.getElementById("book2isbn").innerHTML = book2.isbn;
+            document.getElementById("book3isbn").innerHTML = book3.isbn;
+
+            document.getElementById("book1title").innerHTML = book1.title;
+            document.getElementById("book2title").innerHTML = book2.title;
+            document.getElementById("book3title").innerHTML = book3.title;
+
+            document.getElementById("book1pages").innerHTML = book1.pages;
+            document.getElementById("book2pages").innerHTML = book2.pages;
+            document.getElementById("book3pages").innerHTML = book3.pages;
+
+            document.getElementById("author1name").innerHTML = author1.name;
+            document.getElementById("author1genre").innerHTML = author1.genre;
+
+            document.getElementById("author2name").innerHTML = author2.name;
+            document.getElementById("author2genre").innerHTML = author2.genre;
+
+            document.getElementById("author3name").innerHTML = author3.name;
+            document.getElementById("author3genre").innerHTML = author3.genre;
+
+
+
+
+            // establish the onclick action for Display Listing button and tell it which function to run
+            document.getElementById("btnDisplayListing").onclick = function() {listingFunction()};
+
+            function listingFunction() {
+              // setup var choice as the value from what is selected by the user in the drop down menu
+              let choice = document.getElementById("favoriteList").value;
+
+              // the first of 3 if or else if statements that dictate what to do depending on what option the user chooses
+              if (choice === "books") {
+                // turns on books card & table and turns off authors card & table
+                authors.style.display = "none";
+                books.style.display = "block";
+              }
+
+              else if (choice === "authors") {
+                // turns on authors card & table and turns off books card & table
+                authors.style.display = "block";
+                books.style.display = "none";
+              }
+
+              else if (choice === "select") {
+                // turns both authors and books off
+                authors.style.display = "none";
+                books.style.display = "none";
+              }
+    
+        }
+        </script>
+
+
+    </body>
+    </html>

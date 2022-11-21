@@ -1,0 +1,57 @@
+/*
+======================================
+; Title: gorham-in-n-out-books.css 
+; Author: Professor Krasso
+; Date: 21 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code styles additional items for the In-N-Out-Books assignment in week 6
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+/* the original card-content is not centered so instead of changing the global.css values I added this one just for this assignment */
+.card-content-centered {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* to match the width of the button shown in the solutions example */
+.most-width {
+    width: 56%;
+}
+
+.table-stuff {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Added bold to fit the headings look like in the example*/
+.table-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #4f3674;
+    color: white;
+    padding-left: 10px;
+    border: 1px;
+    border-color: #ddd;
+    border-style: solid;
+}
+
+/* Added some additional padding to match the example in the instruction */
+.table-data {
+    border: 1px;
+    border-color: #ddd;
+    border-style: solid;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.table-data-row:hover {
+    background-color: #d6a800;
+    color: #4F3674;
+    cursor: pointer;
+}
