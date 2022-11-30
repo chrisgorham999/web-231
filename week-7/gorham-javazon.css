@@ -1,0 +1,57 @@
+/*
+======================================
+; Title: gorham-javazon.css 
+; Author: Professor Krasso
+; Date: 29 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code styles additional items for the Javazon assignment in week 7
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+/* the original card-content is not centered so instead of changing the global.css values I added this one just for this assignment */
+.card-content-centered {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* to match the width of the button shown in the solutions example */
+.most-width {
+    width: 44%;
+}
+
+.table-stuff {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Added bold and some padding to the left to match the example in the instructions */
+.table-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #4f3674;
+    color: white;
+    padding-left: 10px;
+    border: 1px;
+    border-color: #ddd;
+    border-style: solid;
+}
+
+/* Added some additional padding to match the example in the instructions */
+.table-data {
+    border: 1px;
+    border-color: #ddd;
+    border-style: solid;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.table-data-row:hover {
+    background-color: #d6a800;
+    color: #4F3674;
+    cursor: pointer;
+}

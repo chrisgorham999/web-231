@@ -1,0 +1,369 @@
+<!-- 
+======================================
+; Title: Assignment 7.2 - Javazon
+; Author: Professor Krasso
+; Date: 29 Nov 2022
+; Modified By: Chris Gorham
+; Description: This code is for the Javazon HTML & JavaScript
+; Sources Used: 
+; Web 231 HTML, CSS, and JavaScript Requirements Word Document
+; W3 Schools Section on JavaScript Classes: https://www.w3schools.com/js/js_classes.asp
+; W3 Schools JavaScript Switch Statement: https://www.w3schools.com/js/js_switch.asp
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <!-- Google Font Set (Oswald) for WEB 231-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link rel="stylesheet" type="text/css" href="gorham-javazon.css">
+    </head>
+
+<body>
+
+    <div id="container">
+        <h1 class="app-header">Welcome to the Javazon App!</h1>
+
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">Javazon Selection Form</div><br>
+                <div class="card-content">
+                    <label class="form-field">Choose a listing</label>
+                    <select class="drop-down-menu" id="listing">
+                        <option value="select">--Select--</option>
+                        <option value="products">Products</option>
+                        <option value="services">Services</option>
+                        <option value="employees">Employees</option>
+                    </select>
+                    <br><br>
+                    <button class="btn btn-primary most-width" id="btnDisplayListing">Display Listing</button>
+                </div><br>
+            </div>
+                <div class="card-example">
+                <a href="../index.html" class="return-home">Return</a>
+                </div>
+
+        </div>
+
+        <!-- The first card (Javazon Products) that will be generated but hidden upon page load-->
+        <div class="card-example">
+            <div class="card" id="products-table">
+                <div class="card-title">Javazon Products</div>
+                <div class="card-content">
+                    <table class="table-stuff">
+                        <tr>
+                            <th class="table-header">Product ID</th>
+                            <th class="table-header">Description</th>
+                            <th class="table-header">Price</th>
+                            <th class="table-header">Quantity</th>
+                            <th class="table-header">Total Value</th>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="product1id"></td>
+                            <td class="table-data" id="product1description"></td>
+                            <td class="table-data" id="product1price"></td>
+                            <td class="table-data" id="product1quantity"></td>
+                            <td class="table-data" id="product1totalValue"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="product2id"></td>
+                            <td class="table-data" id="product2description"></td>
+                            <td class="table-data" id="product2price"></td>
+                            <td class="table-data" id="product2quantity"></td>
+                            <td class="table-data" id="product2totalValue"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="product3id"></td>
+                            <td class="table-data" id="product3description"></td>
+                            <td class="table-data" id="product3price"></td>
+                            <td class="table-data" id="product3quantity"></td>
+                            <td class="table-data" id="product3totalValue"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="product4id"></td>
+                            <td class="table-data" id="product4description"></td>
+                            <td class="table-data" id="product4price"></td>
+                            <td class="table-data" id="product4quantity"></td>
+                            <td class="table-data" id="product4totalValue"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="product5id"></td>
+                            <td class="table-data" id="product5description"></td>
+                            <td class="table-data" id="product5price"></td>
+                            <td class="table-data" id="product5quantity"></td>
+                            <td class="table-data" id="product5totalValue"></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+            <!-- The second card (Javazon Services) that will be generated but hidden upon page load-->
+            <div class="card" id="services-table">
+                <div class="card-title">Javazon Services</div>
+                <div class="card-content">
+                    <table class="table-stuff">
+                        <tr>
+                            <th class="table-header">Service ID</th>
+                            <th class="table-header">Description</th>
+                            <th class="table-header">Hourly Rate</th>
+                            <th class="table-header">Minimum Billable Hours</th>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="service1id"></td>
+                            <td class="table-data" id="service1description"></td>
+                            <td class="table-data" id="service1hourlyrate"></td>
+                            <td class="table-data" id="service1minimumbillablehours"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="service2id"></td>
+                            <td class="table-data" id="service2description"></td>
+                            <td class="table-data" id="service2hourlyrate"></td>
+                            <td class="table-data" id="service2minimumbillablehours"></td>
+                        </tr>
+
+                        <tr class="table-data-row">
+                            <td class="table-data" id="service3id"></td>
+                            <td class="table-data" id="service3description"></td>
+                            <td class="table-data" id="service3hourlyrate"></td>
+                            <td class="table-data" id="service3minimumbillablehours"></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+                <!-- The third card (Javazon Employees) that will be generated but hidden upon page load-->
+                <div class="card" id="employees-table">
+                    <div class="card-title">Javazon Employees</div>
+                    <div class="card-content">
+                        <table class="table-stuff">
+                            <tr>
+                                <th class="table-header">Employee ID</th>
+                                <th class="table-header">Last Name</th>
+                                <th class="table-header">First Name</th>
+                                <th class="table-header">Salary</th>
+                            </tr>
+
+                            <tr class="table-data-row">
+                                <td class="table-data" id="employee1id"></td>
+                                <td class="table-data" id="employee1lastName"></td>
+                                <td class="table-data" id="employee1firstName"></td>
+                                <td class="table-data" id="employee1salary"></td>
+                            </tr>
+
+                            <tr class="table-data-row">
+                                <td class="table-data" id="employee2id"></td>
+                                <td class="table-data" id="employee2lastName"></td>
+                                <td class="table-data" id="employee2firstName"></td>
+                                <td class="table-data" id="employee2salary"></td>
+                            </tr>
+
+                            <tr class="table-data-row">
+                                <td class="table-data" id="employee3id"></td>
+                                <td class="table-data" id="employee3lastName"></td>
+                                <td class="table-data" id="employee3firstName"></td>
+                                <td class="table-data" id="employee3salary"></td>
+                            </tr>
+
+                            <tr class="table-data-row">
+                                <td class="table-data" id="employee4id"></td>
+                                <td class="table-data" id="employee4lastName"></td>
+                                <td class="table-data" id="employee4firstName"></td>
+                                <td class="table-data" id="employee4salary"></td>
+                            </tr>
+
+                            <tr class="table-data-row">
+                                <td class="table-data" id="employee5id"></td>
+                                <td class="table-data" id="employee5lastName"></td>
+                                <td class="table-data" id="employee5firstName"></td>
+                                <td class="table-data" id="employee5salary"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+        
+    </div>
+
+        <script>
+            // Define variables for the HTML IDs of the three cards
+            let products = document.getElementById("products-table");
+            let services = document.getElementById("services-table");
+            let employees = document.getElementById("employees-table");
+
+            // Set the cards to be not displayed upon page load (before the click action)
+            products.style.display = "none";
+            services.style.display = "none";
+            employees.style.display = "none";
+
+            // define classes and constructor values
+            class Products {
+                constructor(id, description, price, quantity) {
+                    this.id = id;
+                    this.description = description;
+                    this.price = price;
+                    this.quantity = quantity;
+                }
+                totalValue() {
+                    let totvalue = this.price * this.quantity;
+                    return totvalue.toFixed(2)
+                }
+            }
+
+            class Services {
+                constructor(id, description, hourlyRate, min) {
+                    this.id = id;
+                    this.description = description;
+                    this.hourlyRate = hourlyRate.toFixed(2);
+                    this.min = min;
+                }
+            }
+
+            class Employees {
+                constructor(id, firstName, lastName, salary) {
+                    this.id = id;
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.salary = salary.toFixed(2);
+                }
+            }
+
+            // create the products, services, and employees and assign them each a unique variable
+            let product1 = new Products(1219171, "Listerine Total Care Anticavity Fluoride", 14.99, 3)
+            let product2 = new Products(1478332, "Tough Grid Camo Green Paracord", 17.99, 5)
+            let product3 = new Products(1289492, "TheraTears Dry Eye Drops", 9.99, 8)
+            let product4 = new Products(8293932, "Thierry Mugler Alien Spray for Women", 69.99, 2)
+            let product5 = new Products(1989322, "NoseFrida Saline Spray", 14.99, 3)
+
+            let service1 = new Services(100, "Landscaping", 75.01, 10)
+            let service2 = new Services(101, "Flooring Installation", 100.00, 25)
+            let service3 = new Services(102, "Painting", 50.00, 5)
+
+            let employee1 = new Employees(1008, "Ned", "Ryerson", 19.99)
+            let employee2 = new Employees(1009, "Maude", "Lebowski", 14.66)
+            let employee3 = new Employees(1010, "Samantha", "Darko", 22.11)
+            let employee4 = new Employees(1011, "Tyler", "Durden", 29.99)
+            let employee5 = new Employees(1012, "Robert", "Muldoon", 17)
+
+            // populate the tables in the cards with the information from the variables 
+            document.getElementById("product1id").innerHTML = product1.id;
+            document.getElementById("product1description").innerHTML = product1.description;
+            document.getElementById("product1price").innerHTML = product1.price;
+            document.getElementById("product1quantity").innerHTML = product1.quantity;
+            document.getElementById("product1totalValue").innerHTML = product1.totalValue();
+
+            document.getElementById("product2id").innerHTML = product2.id;
+            document.getElementById("product2description").innerHTML = product2.description;
+            document.getElementById("product2price").innerHTML = product2.price;
+            document.getElementById("product2quantity").innerHTML = product2.quantity;
+            document.getElementById("product2totalValue").innerHTML = product2.totalValue();
+            
+            document.getElementById("product3id").innerHTML = product3.id;
+            document.getElementById("product3description").innerHTML = product3.description;
+            document.getElementById("product3price").innerHTML = product3.price;
+            document.getElementById("product3quantity").innerHTML = product3.quantity;
+            document.getElementById("product3totalValue").innerHTML = product3.totalValue();
+
+            document.getElementById("product4id").innerHTML = product4.id;
+            document.getElementById("product4description").innerHTML = product4.description;
+            document.getElementById("product4price").innerHTML = product4.price;
+            document.getElementById("product4quantity").innerHTML = product4.quantity;
+            document.getElementById("product4totalValue").innerHTML = product4.totalValue();
+
+            document.getElementById("product5id").innerHTML = product5.id;
+            document.getElementById("product5description").innerHTML = product5.description;
+            document.getElementById("product5price").innerHTML = product5.price;
+            document.getElementById("product5quantity").innerHTML = product5.quantity;
+            document.getElementById("product5totalValue").innerHTML = product5.totalValue();
+
+            document.getElementById("service1id").innerHTML = service1.id;
+            document.getElementById("service1description").innerHTML = service1.description;
+            document.getElementById("service1hourlyrate").innerHTML = service1.hourlyRate;
+            document.getElementById("service1minimumbillablehours").innerHTML = service1.min;
+
+            document.getElementById("service2id").innerHTML = service2.id;
+            document.getElementById("service2description").innerHTML = service2.description;
+            document.getElementById("service2hourlyrate").innerHTML = service2.hourlyRate;
+            document.getElementById("service2minimumbillablehours").innerHTML = service2.min;
+
+            document.getElementById("service3id").innerHTML = service3.id;
+            document.getElementById("service3description").innerHTML = service3.description;
+            document.getElementById("service3hourlyrate").innerHTML = service3.hourlyRate;
+            document.getElementById("service3minimumbillablehours").innerHTML = service3.min;
+
+            document.getElementById("employee1id").innerHTML = employee1.id;
+            document.getElementById("employee1lastName").innerHTML = employee1.lastName;
+            document.getElementById("employee1firstName").innerHTML = employee1.firstName;
+            document.getElementById("employee1salary").innerHTML = employee1.salary;
+
+            document.getElementById("employee2id").innerHTML = employee2.id;
+            document.getElementById("employee2lastName").innerHTML = employee2.lastName;
+            document.getElementById("employee2firstName").innerHTML = employee2.firstName;
+            document.getElementById("employee2salary").innerHTML = employee2.salary;
+
+            document.getElementById("employee3id").innerHTML = employee3.id;
+            document.getElementById("employee3lastName").innerHTML = employee3.lastName;
+            document.getElementById("employee3firstName").innerHTML = employee3.firstName;
+            document.getElementById("employee3salary").innerHTML = employee3.salary;
+
+            document.getElementById("employee4id").innerHTML = employee4.id;
+            document.getElementById("employee4lastName").innerHTML = employee4.lastName;
+            document.getElementById("employee4firstName").innerHTML = employee4.firstName;
+            document.getElementById("employee4salary").innerHTML = employee4.salary;
+
+            document.getElementById("employee5id").innerHTML = employee5.id;
+            document.getElementById("employee5lastName").innerHTML = employee5.lastName;
+            document.getElementById("employee5firstName").innerHTML = employee5.firstName;
+            document.getElementById("employee5salary").innerHTML = employee5.salary;
+
+            // establish the onclick action for Display Listing button and tell it which function to run
+            document.getElementById("btnDisplayListing").onclick = function() {listingFunction()};
+
+            function listingFunction() {
+              // setup var choice as the value from what is selected by the user in the drop down menu
+              let choice = document.getElementById("listing").value;
+              // setup a JavaScript switch statement with the switch expression being our choice variable
+              switch(choice) {
+                // when products is selected, turn on products and turn off everything else
+                case "products":
+                products.style.display = "block";
+                services.style.display = "none";
+                employees.style.display = "none";
+              
+                break;
+                // when services is selected, turn on services and turn off everything else
+                case "services":
+                products.style.display = "none";
+                services.style.display = "block";
+                employees.style.display = "none";
+              
+                break;
+                // when employees is selected, turn on employees and turn off everything else
+                case "employees":
+                products.style.display = "none";
+                services.style.display = "none";
+                employees.style.display = "block";
+              
+                break;
+                // turns all tables off in any other case (to include when select is selected)
+                default:
+                products.style.display = "none";
+                services.style.display = "none";
+                employees.style.display = "none";
+              }
+    
+        }
+        </script>
+
+
+    </body>
+    </html>
