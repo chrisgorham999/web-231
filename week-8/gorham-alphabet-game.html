@@ -1,0 +1,109 @@
+<!-- 
+======================================
+; Title: Assignment 8.2 - Alphabet Game
+; Author: Professor Krasso
+; Date: 6 Dec 2022
+; Modified By: Chris Gorham
+; Description: This code is for the Alphabet Game HTML & JavaScript
+; Sources Used: 
+; Web 231 HTML, CSS, and JavaScript Requirements Word Document
+; W3 Schools - JavaScript Arrays url: https://www.w3schools.com/js/js_arrays.asp
+; W3 Schools - JavaScript For In url: https://www.w3schools.com/js/js_loop_forin.asp
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <!-- Google Font Set (Oswald) for WEB 231-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../global.css">
+        <link rel="stylesheet" type="text/css" href="gorham-alphabet-game.css">
+    </head>
+
+<body>
+
+    <div id="container">
+
+
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">Alphabet Number Form</div><br>
+                <div class="card-content">
+                    <label class="form-field">Alphabet Letter Position</label>
+                    <input class="input" id="txtPosition">
+                    <br><br>
+                    <button class="btn btn-primary most-width" id="btnFindLetter">Find Letter</button>
+                </div><br>
+            </div>
+                <div class="card-example">
+                <a href="../index.html" class="return-home">Return</a>
+                </div>
+
+        </div>
+
+        <!--- First Card with the alphabet letters-->    
+        <div class="card-example">
+            <div class="card">
+                <div class="card-title">Letters in the Alphabet</div>
+                <div class="card-content-centered" id="alphabet">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!--- Second Card with the Results-->          
+        <div class="card-example">        
+            <div class="card" id="results">
+                <div class="card-title">Results</div>
+                <div class="card-content-centered" id="alphabet-letter">
+                        
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+        <script>
+            // assembling all letters of the alphabet through an array into a variable 
+            const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+            // building the empty output variable
+            let alphabetOutput = "";
+
+            // the for/in statement that puts all of the letters together into the output variable from the alphabet variable
+            for (let x in alphabet) {
+                alphabetOutput += alphabet[x] + ", ";
+            }
+
+            // posting the letters of the alphabet into the alphabet html card, cutting off the last two symbols to make it look correct
+            document.getElementById("alphabet").innerHTML = alphabetOutput.slice(0, -2);
+
+            // onclick function that starts the alphabet function
+            document.getElementById("btnFindLetter").onclick = function() {alphabetFunction()};
+
+            // alphabet function that (after the button is clicked) takes the value entered by the user and associates it to the letter position
+            function alphabetFunction() {
+              pos = document.getElementById("txtPosition").value;
+              // value is minus 1 because the constant for alphabet starts with value 0 - in order to make A in position 1 you have to minus 1
+              letter = alphabet[pos - 1];
+              // this if statement handles any number (or letter or any other input) that doesn't have an associated value in the variable
+              if (letter === undefined) {
+                document.getElementById("alphabet-letter").innerHTML = "There are not " + pos + " letters in the alphabet";
+              }
+              // this handles everything else - which are the values that are in the variable
+              else {
+                document.getElementById("alphabet-letter").innerHTML = letter + " is at position " + pos + " in the alphabet";
+              }
+            }
+
+        </script>
+
+
+    </body>
+    </html>

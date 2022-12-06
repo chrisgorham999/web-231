@@ -1,0 +1,22 @@
+/*
+======================================
+; Title: gorham-alphabet-game.css 
+; Author: Professor Krasso
+; Date: 06 Dec 2022
+; Modified By: Chris Gorham
+; Description: This code styles additional items for the Alphabet Game assignment in week 8
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+/* the original card-content is not centered so instead of changing the global.css values I added this one just for this assignment - also added some padding to match the example */
+.card-content-centered {
+    text-align: center;
+    font-size: 28px;
+    padding: 15px;
+}
+
+/* to match the width of the button shown in the solutions example */
+.most-width {
+    width: 61%;
+}
