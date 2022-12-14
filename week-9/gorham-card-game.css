@@ -1,0 +1,28 @@
+/*
+======================================
+; Title: gorham-card-game.css 
+; Author: Professor Krasso
+; Date: 12 Dec 2022
+; Modified By: Chris Gorham
+; Description: This code styles additional items for the Card Game assignment in week 9
+; Sources Used: Web 231 HTML, CSS, and JavaScript Requirements Word Document
+;=====================================
+*/
+
+.player-card {
+    text-align: center;
+}
+
+.card-content-centered {
+    text-align: center;
+    font-size: 28px;
+    padding: 15px;
+}
+
+/* creates the CSS for the grid with 4 columns and the padding to match the styling in the example */
+.player-card-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    grid-gap: 10px;
+}
